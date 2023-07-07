@@ -6,5 +6,6 @@ public class MainPlayerOne {
     public static void main(String[] args) {
             ClientGame clientGame = new ClientGame();
             clientGame.setVisible(true);
+
     }
 }
