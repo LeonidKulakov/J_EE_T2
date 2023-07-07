@@ -3,6 +3,8 @@ package ru.kulakov.client.view;
 import ru.kulakov.client.service.DefeatButton;
 import ru.kulakov.client.service.DrawButton;
 import ru.kulakov.client.service.InfoButton;
+import ru.kulakov.client.service.PVEButton;
+import ru.kulakov.client.service.PVPButton;
 import ru.kulakov.client.service.PaperButton;
 import ru.kulakov.client.service.RockButton;
 import ru.kulakov.client.service.ScissorsButton;
@@ -18,6 +20,9 @@ public class ClientGame extends JFrame {
     private JButton draw;
     private JButton defeat;
     private JButton info;
+    private JButton pvp;
+    private JButton pve;
+
 
     public ClientGame() {
         super("Game");
@@ -26,7 +31,7 @@ public class ClientGame extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         Container container = this.getContentPane();
-        container.setLayout(new GridLayout(10, 1, 5, 5));
+        container.setLayout(new GridLayout(12, 1, 5, 5));
 
         container.add(new JLabel("Имя пользователя"));
         input = new JTextField(null, 2);
@@ -59,9 +64,16 @@ public class ClientGame extends JFrame {
         info = new JButton("Информация");
         info.addActionListener(new InfoButton(this));
         container.add(info);
+        //TODO обработать вывод текста extArea.append("Любой текст");
+        JTextArea area1 = new JTextArea("Многострочное поле", 8, 10);
 
+        pve = new JButton("PVE");
+        pve.addActionListener(new PVEButton());
+        container.add(pve);
 
-
+        pvp = new JButton("PVP");
+        pvp.addActionListener(new PVPButton());
+        container.add(pvp);
     }
 
     // Получить текст из поля можно с помощью getInput().getText()

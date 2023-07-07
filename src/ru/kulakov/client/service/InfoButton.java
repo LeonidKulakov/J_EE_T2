@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class InfoButton implements ActionListener {
+
     private ClientGame clientGame;
 
     public InfoButton(ClientGame clientGame) {
